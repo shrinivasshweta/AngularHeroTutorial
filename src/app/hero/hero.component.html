@@ -1,0 +1,18 @@
+<h2>My Heroes</h2>
+<ul class="heroes">
+  <li *ngFor="let hero of heroes"
+    [class.selected]="hero === selectedHero"
+    (click)="onSelect(hero)">
+    <span class="badge">{{hero.id}}</span> {{hero.name}}
+  </li>
+</ul>
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>
+
+<!-- [class.my-class]="expression" adds (or removes) the CSS class my-class to (or from)
+  the element depending on whether expression results in true or false
+ -->
+<!-- 
+ This is the syntax for a property binding, 
+ a binding in which data flows one way from the data source 
+ (the expression hero === selectedHero) to a property of class. -->
+
